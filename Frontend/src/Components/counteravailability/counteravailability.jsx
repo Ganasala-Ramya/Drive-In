@@ -38,13 +38,16 @@ const Counteravailability = () => {
     <div>
       <h1
         style={{
-          color: "blue",
+          color: "DodgerBlue",
           textAlign: "center",
           fontFamily: "sans-serif",
-          padding: "20px 0"
+          padding: "20px 0",
+          fontFamily:"Times New Roman"
         }}
       >
+        <strong>
         Counter Availability
+        </strong>
       </h1>
       <table className="table table-bordered">
         <thead>
