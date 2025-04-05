@@ -1,7 +1,7 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Home from './Components/Home';
-import Counters from './Components/counters/counters';
+import Counters from './Components/counters/Counters';
 import CPList from './Components/CountersList/CPList';
 import Settings from './Components/settings/Settings';
 import Counteravailability from './Components/counteravailability/counteravailability';
@@ -11,6 +11,9 @@ import Home1 from "./Home1";
 import { Logout } from "@mui/icons-material";
 import Main from "./Components/Mainpaje";
 import { SnackbarProvider } from "notistack";
+import CounterLogin from "./Components/CounterLogin";
+import CounterSetting from "./Components/CounterSetting";
+import CounterAdmin from "./CounterAdmin";
 
 function App({ profiles }) {
   return (
@@ -22,12 +25,21 @@ function App({ profiles }) {
       <Routes>
         <Route path="/" element={<Home1 />} />
         <Route path="/admin" element={<Home />}>
-        <Route index element={<Main />} />
+        {/* <Route index element={<Main />} /> */}
           <Route path="counters" element={<Counters />} />
           <Route path="counterprofiles" element={<CPList />} />
           <Route path="counteravailability" element={<Counteravailability />} />
           <Route path="settings" element={<Settings />} />
           <Route path="details/:id" element={<DetailsPage profiles={profiles} />} />
+        </Route>
+        <Route path="/counterlogin" element={<CounterLogin />} />
+        <Route path="/counter" element={<CounterAdmin />}>
+        {/* <Route index element={<Main />} /> */}
+          <Route path="counters" element={<Counters />} />
+          <Route path="counterprofiles" element={<CPList />} />
+          <Route path="counteravailability" element={<Counteravailability />} />
+          <Route path="countersetting" element={<CounterSetting/>} />
+          {/* <Route path="details/:id" element={<DetailsPage profiles={profiles} />} /> */}
         </Route>
         <Route path="/logout" element={<Logout />} />
       </Routes>

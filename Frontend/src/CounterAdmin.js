@@ -1,18 +1,18 @@
 import React from "react";
 import { NavLink, Outlet, useLocation, useNavigate } from "react-router-dom";
 import { Settings, Logout, Store, RestaurantMenu, Restaurant } from "@mui/icons-material";
-import Psn from "./Imagess/psnlogo2.png";
-// import "./App.css"; // Use same styling if needed
+// import Psn from "/Imagess/psnlogo2.png";
+import "./App.css"; // Use same styling if needed
 import "bootstrap/dist/css/bootstrap.min.css";
 
-function DashboardLayoutBasic() {
+function CounterAdmin() {
   const navigate = useNavigate();
 
   const navItems = [
-    { path: "/admin/counters", label: "Counters", icon: <Restaurant /> },
-    { path: "/admin/counterprofiles", label: "Counter Profiles", icon: <Store /> },
-    { path: "/admin/counteravailability", label: "Counter Availability", icon: <RestaurantMenu /> },
-    { path: "/admin/settings", label: "Settings", icon: <Settings /> },
+    { path: "/counter/counters", label: "Counters", icon: <Restaurant /> },
+    { path: "/counter/counterprofiles", label: "Counter Profiles", icon: <Store /> },
+    { path: "/counter/counteravailability", label: "Counter Availability", icon: <RestaurantMenu /> },
+    { path: "/counter/countersetting", label: "Settings", icon: <Settings /> },
     { path: "/logout", label: "Logout", icon: <Logout /> },
   ];
 
@@ -20,7 +20,7 @@ function DashboardLayoutBasic() {
     <div>
       {/* Top Header */}
       <div className="d-flex align-items-center p-3 border-bottom">
-        <img src={Psn} alt="Logo" style={{ height: "40px", marginRight: "15px" }} />
+        {/* <img src={Psn} alt="Logo" style={{ height: "40px", marginRight: "15px" }} /> */}
         <h5 className="mb-0">The Place Drive In</h5>
       </div>
 
@@ -51,4 +51,4 @@ function DashboardLayoutBasic() {
   );
 }
 
-export default DashboardLayoutBasic;
+export default CounterAdmin;
